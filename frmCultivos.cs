@@ -13,6 +13,7 @@ namespace pryParedesSP1H1
 {
     public partial class frmCultivos : Form
     {
+        //hola
         public frmCultivos()
         {
             InitializeComponent();
