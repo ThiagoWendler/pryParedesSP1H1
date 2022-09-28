@@ -30,8 +30,11 @@ namespace pryParedesSP1H1
 
         private void frmProduccion_Load(object sender, EventArgs e)
         {
+            //Uso de StreamReader para leer el archivo ("./localidad.txt") y trabajar con flujo de datos
             StreamReader LeerCantidad = new StreamReader("./localidad.txt");
 
+            //Mientras LeerCantidad sea diferente al final del archivo
+            //Va a agregar los datos que lea del archivo ./localidad.
             while (!LeerCantidad.EndOfStream)
             {
                 cbxLocalidad.Items.Add(LeerCantidad.ReadLine().ToString());
@@ -56,12 +59,13 @@ namespace pryParedesSP1H1
 
         private void btnCrearProd_Click(object sender, EventArgs e)
         {
-            
 
+
+            //Se crea el archivo ("./produccion.txt")
             File.Create("./produccion.txt");
 
-            
-            
+
+
         }
 
         private void btnacepta_Click(object sender, EventArgs e)

@@ -26,8 +26,10 @@ namespace pryParedesSP1H1
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            //Abro el Agregado de datos, y uso StreamWriter (para salida de caracteres en una codificacion determinada)
             TextWriter Escribir = new StreamWriter("./cultivos.txt", true);
-            
+
+            //Uso la variable "Escribir" para escribir en el archivo ("./cultivos.txt)
             Escribir.WriteLine(Convert.ToString(txtIdentificador.Text + " " + txtCultivo.Text));
             Escribir.Close();
 
@@ -40,6 +42,7 @@ namespace pryParedesSP1H1
 
         private void txtCultivo_TextChanged(object sender, EventArgs e)
         {
+            //Si la textboxCultivo es diferente a vacio
             if (txtCultivo.Text != "")
             {
                 btnAceptar.Enabled = true;
@@ -50,6 +53,7 @@ namespace pryParedesSP1H1
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            //DialogResult, que se basa en el resultado que el usuario de cuando se muestre la MessageBox (Resultados de dialogo: Ok  - Cancelar)
             DialogResult r = MessageBox.Show("¿Esta seguro que desea eliminar el archivo?" + "\nAtencion: Si elimina el archivo todo el contenido se perdera" + "\n¿Aun desea continuar?", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
             if (r == DialogResult.OK)
@@ -64,6 +68,11 @@ namespace pryParedesSP1H1
             {
                 MessageBox.Show("Accion cancelada", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void frmCultivos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }    

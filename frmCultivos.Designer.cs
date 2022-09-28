@@ -124,6 +124,7 @@
             this.Name = "frmCultivos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cultivos";
+            this.Load += new System.EventHandler(this.frmCultivos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
